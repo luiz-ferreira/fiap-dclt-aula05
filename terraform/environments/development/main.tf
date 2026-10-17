@@ -32,7 +32,10 @@ terraform {
 # Configura provider AWS com tags padrão
 provider "aws" {
   region = var.aws_region # Região definida em variables.tf
-  
+  skip_metadata_api_check     = true
+  skip_region_validation      = true
+  skip_credentials_validation = true
+
   # Tags aplicadas automaticamente a todos os recursos
   default_tags {
     tags = {
