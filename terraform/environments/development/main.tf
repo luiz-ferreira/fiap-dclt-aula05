@@ -20,6 +20,9 @@ terraform {
     key     = "development/terraform.tfstate" # Caminho do arquivo state
     region  = "us-east-1"                     # Região AWS
     encrypt = true                            # Criptografar state
+    skip_metadata_api_check     = true
+    skip_region_validation      = true
+    skip_credentials_validation = true
   }
 }
 
@@ -159,4 +162,4 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "artifacts" {
     }
   }
 }
-# Pipeline test sáb. 17 out 2026 12:22:43 -03
+
